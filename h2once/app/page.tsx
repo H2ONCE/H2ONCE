@@ -110,7 +110,7 @@ export default function Home() {
             </a>
 
             <a
-              href="https://wa.me/60123456789"
+              href="https://wa.me/60173393012"
               className="px-10 py-4 border border-white/20 rounded-full text-white/80 hover:border-[#C8A24A] hover:text-[#C8A24A] transition duration-300"
             >
               OEM Inquiry
