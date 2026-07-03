@@ -1,96 +1,90 @@
 "use client"
 
-import { useState } from "react"
-
 export default function Navbar() {
-  const [open, setOpen] = useState(false)
-
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-xl border-b border-white/10">
-      <div className="max-w-7xl mx-auto h-20 px-6 flex items-center justify-between">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur-xl">
+
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-8 py-5">
 
         {/* Logo */}
         <a
           href="/"
-          className="text-3xl font-bold tracking-[6px] text-[#C8A24A]"
+          className="
+            text-2xl
+            font-bold
+            tracking-[0.35em]
+            bg-gradient-to-r
+            from-[#5E1020]
+            via-[#7A1E2C]
+            to-[#A42D42]
+            bg-clip-text
+            text-transparent
+            transition
+            duration-500
+            hover:scale-105
+          "
         >
           H2ONCE
         </a>
 
-        {/* Desktop Menu (只在 lg 以上显示) */}
-        <nav className="hidden lg:flex items-center gap-12 text-white/80">
+        {/* Desktop Menu */}
+        <nav className="hidden lg:flex items-center gap-10 text-sm text-white/70">
 
-          <a href="/" className="hover:text-[#C8A24A] transition">
+          <a
+            href="/"
+            className="transition duration-300 hover:text-[#FFB37A]"
+          >
             首页
           </a>
 
-          <a href="/products" className="hover:text-[#C8A24A] transition">
+          <a
+            href="/products"
+            className="transition duration-300 hover:text-[#FFB37A]"
+          >
             产品
           </a>
 
-          <a href="/about" className="hover:text-[#C8A24A] transition">
+          <a
+            href="/about"
+            className="transition duration-300 hover:text-[#FFB37A]"
+          >
             关于
           </a>
 
-          <a href="/contact" className="hover:text-[#C8A24A] transition">
+          <a
+            href="/contact"
+            className="transition duration-300 hover:text-[#FFB37A]"
+          >
             联系
           </a>
 
         </nav>
 
-        {/* Desktop Button */}
-        <div className="hidden lg:block">
-          <a
-            href="https://wa.me/60173393012"
-            className="px-7 py-3 rounded-full bg-[#7A1D2B] hover:bg-[#96263A] transition"
-          >
-            WhatsApp
-          </a>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="lg:hidden text-3xl text-white"
-          onClick={() => setOpen(!open)}
+        {/* WhatsApp */}
+        <a
+          href="https://wa.me/60128186358"
+          className="
+            rounded-full
+            bg-[#7A1E2C]
+            px-5
+            py-2.5
+            text-sm
+            font-medium
+            text-white
+            shadow-lg
+            shadow-[#7A1E2C]/30
+            transition
+            duration-300
+            hover:scale-105
+            hover:bg-[#92283A]
+            hover:shadow-[#92283A]/40
+          "
         >
-          ☰
-        </button>
+          WhatsApp
+        </a>
 
       </div>
 
-      {/* Mobile Menu */}
-      {open && (
-        <div className="lg:hidden bg-black/95 border-t border-white/10">
-
-          <div className="flex flex-col items-center py-8 gap-6">
-
-            <a href="/" onClick={() => setOpen(false)}>
-              首页
-            </a>
-
-            <a href="/products" onClick={() => setOpen(false)}>
-              产品
-            </a>
-
-            <a href="/about" onClick={() => setOpen(false)}>
-              关于
-            </a>
-
-            <a href="/contact" onClick={() => setOpen(false)}>
-              联系
-            </a>
-
-            <a
-              href="https://wa.me/60173393012"
-              className="mt-4 px-8 py-3 rounded-full bg-[#7A1D2B]"
-            >
-              WhatsApp
-            </a>
-
-          </div>
-
-        </div>
-      )}
     </header>
   )
 }
